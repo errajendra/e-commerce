@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title> Buy - {{title}} </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static "frontend/assets/images/logo/favicon.png" %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static "frontend/assets/css/bootstrap.min.css" %}">
+    <!-- select 2 -->
+    <link rel="stylesheet" href="{% static "frontend/assets/css/select2.min.css" %}">
+    <!-- Slick -->
+    <link rel="stylesheet" href="{% static "frontend/assets/css/slick.css" %}">
+    <!-- Wow -->
+    <link rel="stylesheet" href="{% static "frontend/assets/css/jquery-ui.css" %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static "frontend/assets/css/main.css" %}">
+  </head>
+  <body>
+    <!--==================== Preloader Start ====================-->
+    <div class="preloader">
+      <img src="{% static "frontend/assets/images/icon/preloader.gif" %}" alt="">
+      <!-- <div class="loader"></div> -->
+    </div>
+    <!--==================== Preloader End ====================-->
+    <!--==================== Overlay Start ====================-->
+    <div class="overlay"></div>
+    <!--==================== Overlay End ====================-->
+    <!--==================== Sidebar Overlay End ====================-->
+    <div class="side-overlay"></div>
+    <!--==================== Sidebar Overlay End ====================-->
+    <!-- ==================== Scroll to Top End Here ==================== -->
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <!-- ==================== Scroll to Top End Here ==================== -->
+    {% include "frontend/includes/header.html" %}
+    
+    {% block content %}{% endblock content %}
+    
+    {% block newsletter %}{% endblock newsletter %}
+
+    {% include "frontend/includes/footer.html" %}
+
+    <!-- Jquery js -->
+    <script src="{% static "frontend/assets/js/jquery-3.7.1.min.js" %}"></script>
+    <!-- Bootstrap Bundle Js -->
+    <script src="{% static "frontend/assets/js/boostrap.bundle.min.js" %}"></script>
+    <!-- Bootstrap Bundle Js -->
+    <script src="{% static "frontend/assets/js/phosphor-icon.js" %}"></script>
+    <!-- Select 2 -->
+    <script src="{% static "frontend/assets/js/select2.min.js" %}"></script>
+    <!-- Slick js -->
+    <script src="{% static "frontend/assets/js/slick.min.js" %}"></script>
+    <!-- Slick js -->
+    <script src="{% static "frontend/assets/js/count-down.js" %}"></script>
+    <!-- wow js -->
+    <script src="{% static "frontend/assets/js/jquery-ui.js" %}"></script>
+    <!-- main js -->
+    <script src="{% static "frontend/assets/js/main.js" %}"></script>
+
+    <script nonce="UnoE1fyyJD7n3ZD8/ni8og==">
+      //<![CDATA[
+        $(function(){viewloader.execute(Views);});
+      
+      //]]>
+    </script>
+  </body>
+</html>

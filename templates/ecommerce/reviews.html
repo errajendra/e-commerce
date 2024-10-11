@@ -1,0 +1,87 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <!-- Card header -->
+            <div class="card-header border-0">
+                <h3 class="mb-0">{{title}} </h3>
+                <a href="{% url "add_review" %}" class="bg-success btn float-end">+Add</a>
+            </div>
+            {% csrf_token %}
+            <!-- Light table -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="sort" data-sort="name">SN</th>
+                        <th scope="col" class="sort" data-sort="name">User</th>
+                        <th scope="col" class="sort" data-sort="name">Rating</th>
+                        <th scope="col" class="sort" data-sort="name">Review</th>
+                        <th scope="col" class="sort" data-sort="name">Published</th>
+                        <th scope="col" class="sort" data-sort="name">Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="list">
+                    {% for review in reviews %}
+                    <tr>
+                        <td class="budget">
+                            {{forloop.counter}}
+                        </td>
+                        <td>
+                            {{review.user}}
+                        </td>
+                        <td>
+                            {{review.rating}}
+                        </td>
+                        <td>
+                            {{review.review}}
+                        </td>
+                        <td>
+                            {% if review.published %}
+                            Yes
+                            {% else %}
+                            No
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{review.updated_at}}
+                        </td>
+                        <td>
+                            <a href="{% url 'update_review' review.id %}"><i class="fa fa-edit" title="Update" ></i></a>
+                            <i class="fa fa-trash-alt" type="button" data-bs-toggle="modal" href="#deletereviewModal{{review.id}}" style="background:transparent;"></i>
+                        </td>
+                    </tr>
+                     <!-- Modal -->
+                    
+                    <div class="modal fade" id="deletereviewModal{{review.id}}" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel{{review.id}}">Delete review</h5>
+
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure want to delete ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a class="btn btn-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- end Model -->
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>  
+    </div>
+</div>
+{% endblock content %}
+

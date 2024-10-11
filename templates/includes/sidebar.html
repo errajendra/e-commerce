@@ -1,0 +1,153 @@
+{% load template_tag %}
+<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
+  <a class="navbar-brand me-lg-5" href="/">
+      <img class="navbar-brand-dark" src="{% get_logo_url %}" alt="Logo" /> <img class="navbar-brand-light" src="/static/assets/img/logo.png" alt="Food Delivery logo" />
+  </a>
+  <div class="d-flex align-items-center">
+      <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+</nav>
+
+<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
+  <div class="sidebar-inner px-4 pt-3">
+    <div>
+      <img src="{% get_logo_url %}" alt="Logo" class="image-md">
+    </div>
+    
+    <ul class="nav flex-column pt-3 pt-md-0 mt-3">
+
+      {% if request.user.is_staff %}
+      <li class="nav-item {% if request.resolver_match.view_name == 'index' %} active {% endif %}">
+        <a href="{% url 'index' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </span>
+          <span class="sidebar-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item {% if request.resolver_match.view_name == 'users' %} active {% endif %}">
+        <a href="{% url 'users' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-users"></i>
+          </span>
+          <span class="sidebar-text">Customers</span>
+        </a>
+      </li>
+      
+      {% comment %} <li class="nav-item"><!-- Separator with title --><hr class="navbar-divider"></li>
+      <li class="nav-item mb-4">
+        <div class="text-italic nav-title text-muted">E-Commerce</div>
+      </li> {% endcomment %}
+
+      <li class="nav-item {% if request.resolver_match.view_name == 'orders' %} active {% endif %}">
+        <a href="{% url 'orders' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-list"></i>
+          </span>
+          <span class="sidebar-text">Orders</span>
+        </a>
+      </li>
+
+      {% comment %} <li class="nav-item {% if request.resolver_match.view_name == 'transactions' %} active {% endif %}">
+        <a href="{% url 'transactions' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-list"></i>
+          </span>
+          <span class="sidebar-text">Transactions</span>
+        </a>
+      </li> {% endcomment %}
+
+      <li class="nav-item {% if request.resolver_match.view_name == 'list_categories' %} active {% endif %}">
+        <a href="{% url 'list_categories' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-network-wired"></i>
+          </span>
+          <span class="sidebar-text">Category</span>
+        </a>
+      </li>
+
+      {% comment %} <li class="nav-item {% if request.resolver_match.view_name == 'list_category_title' %} active {% endif %}">
+        <a href="{% url 'list_category_title' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-network-wired"></i>
+          </span>
+          <span class="sidebar-text">Category Title</span>
+        </a>
+      </li>
+
+      <li class="nav-item {% if request.resolver_match.view_name == 'list_sub_categories' %} active {% endif %}">
+        <a href="{% url 'list_sub_categories' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-network-wired"></i>
+          </span>
+          <span class="sidebar-text">Sub Category</span>
+        </a>
+      </li> {% endcomment %}
+
+      <li class="nav-item {% if request.resolver_match.view_name == 'list_products' %} active {% endif %}">
+        <a href="{% url 'list_products' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-images"></i>
+          </span>
+          <span class="sidebar-text">Products</span>
+        </a>
+      </li>
+
+      {% comment %} <li class="nav-item {% if request.resolver_match.view_name == 'list_productfaqs' %} active {% endif %}">
+        <a href="{% url 'list_productfaqs' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-question"></i>
+          </span>
+          <span class="sidebar-text">Product FAQs</span>
+        </a>
+      </li> {% endcomment %}
+
+      {% comment %} <li class="nav-item"><!-- Separator with title --><hr class="navbar-divider"></li>
+      <li class="nav-item mb-4">
+        <div class="text-italic nav-title text-muted">Features</div>
+      </li> {% endcomment %}
+
+      <li class="nav-item {% if request.resolver_match.view_name == 'list_banners' %} active {% endif %}">
+        <a href="{% url 'list_banners' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-images"></i>
+          </span>
+          <span class="sidebar-text">Banners</span>
+        </a>
+      </li>
+      
+
+      <li class="nav-item {% if request.resolver_match.view_name == 'list_blogs' %} active {% endif %}">
+        <a href="{% url 'list_blogs' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-blog"></i>
+          </span>
+          <span class="sidebar-text">Blogs</span>
+        </a>
+      </li>
+      
+      <li class="nav-item {% if request.resolver_match.view_name == 'list_reviews' %} active {% endif %}">
+        <a href="{% url 'list_reviews' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-star"></i>
+          </span>
+          <span class="sidebar-text">Reviews</span>
+        </a>
+      </li>
+
+      {% comment %} <li class="nav-item {% if request.resolver_match.view_name == 'update-constance' %} active {% endif %}">
+        <a href="{% url 'update-constance' %}" class="nav-link">
+          <span class="sidebar-icon">
+            <i class="fas fa-cog"></i>
+          </span>
+          <span class="sidebar-text">Setting</span>
+        </a>
+      </li> {% endcomment %}
+      
+      
+      {% endif %}
+    </ul>
+  </div>
+</nav>
