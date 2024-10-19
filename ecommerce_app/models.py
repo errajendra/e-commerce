@@ -78,6 +78,10 @@ class Category(BaseModel):
 
     def __str__(self):
         return self.name
+    
+    @property
+    def product_count(self):
+        return self.products.filter(status=True, stock__gte=1).count() or 0
 
 
 
@@ -194,7 +198,7 @@ class Product(BaseModel):
         return f"{self.name} ({self.price})"
 
     @property
-    def list_price(self):
+    def list_price(self): # selling price
         return self.price + self.discount_price
     
     @property
@@ -205,7 +209,7 @@ class Product(BaseModel):
         rating = self.reviews.aggregate(
             models.Avg('rating'))['rating__avg']
         if not rating:
-            return 0
+            return 4.6
         return round(rating, 2)
 
 

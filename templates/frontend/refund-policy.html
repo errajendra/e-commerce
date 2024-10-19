@@ -1,0 +1,75 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load template_tag %}
+{% block content %}
+
+<!-- ========================= Breadcrumb Start =============================== -->
+<div class="breadcrumb py-26 bg-main-two-50">
+    <div class="container container-lg">
+        <div class="breadcrumb-wrapper flex-between flex-wrap gap-16">
+            <h6 class="mb-0">Terms & Condition's</h6>
+            <ul class="flex-align gap-8 flex-wrap">
+                <li class="text-sm">
+                    <a href="{% url "home" %}" class="text-gray-900 flex-align gap-8 hover-text-main-600">
+                        <i class="ph ph-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="flex-align">
+                    <i class="ph ph-caret-right"></i>
+                </li>
+                <li class="text-sm text-main-600"> TC </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ========================= Breadcrumb End =============================== -->
+
+<section class="account py-80">
+    <div class="container container-lg">
+        <div class="row gy-4 p-14">
+            <div class="card card-soft-main-600 shadow border-0">
+                <div class="card-header card-title">
+                    <h5 class=""> {{title}} </h5>
+                </div>
+                <div class="card-body">
+                    
+                    <p><strong>Effective Date: 10/10/2024</strong></p>
+
+                    <p>At Muscle Ayurveda, we strive to ensure the satisfaction of our customers. If, for any reason, you are not entirely satisfied with your purchase, we’re here to help.</p>
+
+                    <h5>1. Returns</h5>
+                    <p>You have [insert number of days] days to return an item from the date you received it. To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.</p>
+
+                    <h5>2. Refunds</h5>
+                    <p>Once we receive your item, we will inspect it and notify you that we have received your returned item. We will immediately notify you on the status of your refund after inspecting the item.</p>
+                    <p>If your return is approved, we will initiate a refund to your original method of payment. You will receive the credit within a certain amount of days, depending on your card issuer's policies.</p>
+
+                    <h5>3. Late or Missing Refunds</h5>
+                    <p>If you haven’t received a refund yet, first check your bank account again. Then contact your credit card company, as it may take some time before your refund is officially posted.</p>
+                    <p>Next, contact your bank. There is often some processing time before a refund is posted. If you’ve done all of this and you still have not received your refund, please contact us at [insert email].</p>
+
+                    <h5>4. Shipping</h5>
+                    <p>You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.</p>
+
+                    <h5>5. Exceptions</h5>
+                    <p>Some items are non-returnable and non-refundable, including but not limited to:</p>
+                    <ul>
+                        <li>Opened or used products</li>
+                        <li>Perishable goods such as food, supplements, etc.</li>
+                        <li>Customized or personalized products</li>
+                        <li>Gift cards</li>
+                    </ul>
+
+                    <h5>6. Exchanges</h5>
+                    <p>We only replace items if they are defective or damaged. If you need to exchange an item for the same product, please contact us at [insert email] and send your item to: [insert address].</p>
+
+                    <h5>Contact Us</h5>
+                    <p>For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by email at [insert email] or by mail using the details provided below:</p>
+                    <a href="{% url "contact" %}" class="btn btn-info mt-14">Contact US</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

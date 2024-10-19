@@ -118,10 +118,10 @@ CONSTANCE_ADDITIONAL_FIELDS = {
 CONSTANCE_CONFIG = {
     'SERVICEABLE_AREA_ZIPCODE': ("560076,560068", 'Enter comman separated zip codes of your serviceable area'),
     'LOGO': ('', 'Logo', 'image_field'),
-    'SITE_TITLE': ('E-Shop', 'Site Title', str),
+    'SITE_TITLE': ('Muscle Ayurveda', 'Site Title', str),
 }
 CONSTANCE_CONFIG_FIELDSETS = {
-    'General Options': ('LOGO', 'SERVICEABLE_AREA_ZIPCODE'),
+    'General Options': ('SITE_TITLE', 'LOGO', 'SERVICEABLE_AREA_ZIPCODE'),
 }
 
 # Database

@@ -1,0 +1,96 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load template_tag %}
+{% block content %}
+
+<!-- ========================= Breadcrumb Start =============================== -->
+<div class="breadcrumb py-26 bg-main-two-50">
+    <div class="container container-lg">
+        <div class="breadcrumb-wrapper flex-between flex-wrap gap-16">
+            <h6 class="mb-0">Terms & Condition's</h6>
+            <ul class="flex-align gap-8 flex-wrap">
+                <li class="text-sm">
+                    <a href="{% url "home" %}" class="text-gray-900 flex-align gap-8 hover-text-main-600">
+                        <i class="ph ph-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="flex-align">
+                    <i class="ph ph-caret-right"></i>
+                </li>
+                <li class="text-sm text-main-600"> TC </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ========================= Breadcrumb End =============================== -->
+
+<!-- =============================== TC Section Start =========================== -->
+<section class="account py-80">
+    <div class="container container-lg">
+        <div class="row gy-4 p-14">
+            <div class="card card-soft-main-600 shadow border-0">
+                <div class="card-header card-title">
+                    <h5 class=""> {{title}} </h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Effective Date: 10/10/2024 </strong></p>
+
+                    <p>Welcome to {% site_title %}! These terms and conditions outline the rules and regulations for the use of the {% site_title %} website, located at <a href="https://muscleayurveda.com">muscleayurveda.com</a>.</p>
+
+                    <p>By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use {% site_title %} if you do not accept all of the terms and conditions stated on this page.</p>
+
+                    <h5>1. General Terms</h5>
+                    <p>1.1. By using this website, you represent that you are at least the age of majority in your state or province of residence.</p>
+                    <p>1.2. If you are using this website on behalf of a company, organization, or other legal entity, you are agreeing to these terms on behalf of that entity.</p>
+
+                    <h5>2. Products and Services</h5>
+                    <p>2.1. {% site_title %} offers a range of health and wellness products for purchase. The prices listed on the website are in [currency] and may be subject to change without notice.</p>
+                    <p>2.2. We reserve the right to modify or discontinue any product or service without prior notice.</p>
+                    <p>2.3. We make every effort to display the colors and images of our products accurately. However, we cannot guarantee that your computer’s monitor display of any color will be accurate.</p>
+
+                    <h5>3. Orders and Payments</h5>
+                    <p>3.1. All orders placed through the website are subject to acceptance and availability. We reserve the right to refuse any order for any reason.</p>
+                    <p>3.2. Upon receiving your order, we will send you an acknowledgment email. This is not an acceptance of your order, just confirmation that we have received it.</p>
+                    <p>3.3. Payment is required at the time of purchase. We accept payments via [Payment Methods] (e.g., credit cards, debit cards, PayPal, etc.).</p>
+                    <p>3.4. In case of a pricing error on the website, we reserve the right to cancel or refuse any order placed at an incorrect price.</p>
+
+                    <h5>4. Shipping and Delivery</h5>
+                    <p>4.1. We offer shipping within [Countries/Regions]. Please allow [time frame] for your order to be processed and shipped.</p>
+                    <p>4.2. Shipping costs are calculated at checkout and may vary depending on the delivery location and the size/weight of the items.</p>
+                    <p>4.3. Delivery times are estimates and are not guaranteed. We are not responsible for delays caused by external factors such as customs clearance, weather, or carrier issues.</p>
+
+                    <h5>5. Returns and Refunds</h5>
+                    <p>5.1. If you are not completely satisfied with your purchase, you may return the product within [number] days of delivery, provided the item is unused, unopened, and in its original packaging.</p>
+                    <p>5.2. To initiate a return, please contact us at [email/contact information] to receive a return authorization.</p>
+                    <p>5.3. Refunds will be processed once we receive the returned product and verify its condition. Shipping costs are non-refundable, and return shipping fees are the responsibility of the customer.</p>
+
+                    <h5>6. Limitation of Liability</h5>
+                    <p>6.1. {% site_title %} and its affiliates will not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this website or the purchase of our products.</p>
+                    <p>6.2. We do not guarantee that the website will be error-free, uninterrupted, or free from viruses or other harmful components.</p>
+
+                    <h5>7. Intellectual Property</h5>
+                    <p>7.1. All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of {% site_title %} or its licensors and is protected by intellectual property laws.</p>
+                    <p>7.2. You may not reproduce, distribute, or transmit any content on this website without our prior written consent.</p>
+
+                    <h5>8. Privacy</h5>
+                    <p>8.1. Your use of this website is subject to our <a href="[link to your privacy policy]">Privacy Policy</a>, which outlines how we collect, use, and protect your personal information.</p>
+
+                    <h5>9. Governing Law</h5>
+                    <p>9.1. These Terms and Conditions are governed by and construed in accordance with the laws of [Your Country/State], and any disputes will be resolved in the courts of [Your Jurisdiction].</p>
+
+                    <h5>10. Changes to Terms & Conditions</h5>
+                    <p>10.1. {% site_title %} reserves the right to update or modify these Terms and Conditions at any time without prior notice. Your continued use of the website following any changes indicates your acceptance of the new terms.</p>
+
+                    <h5>Contact Us</h5>
+                    <p>For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by email at [insert email] or by mail using the details provided below:</p>
+                    
+                    <a href="{% url "contact" %}" class="btn btn-info mt-14">Contact US</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+<!-- =============================== TC Section End =========================== -->
+
+{% endblock content %}

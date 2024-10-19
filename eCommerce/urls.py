@@ -28,11 +28,11 @@ admin.site.site_title = "Admin"
 admin.site.index_title = "Administration"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('super-admin/', admin.site.urls),
     path("", include('frontend.urls')),
     path("ckeditor5/", include('django_ckeditor_5.urls'),
          name="ck_editor_5_upload_file"),
-    path('user/', include('user.urls')),
+    path('admin/', include('user.urls')),
     path('ecommerce/', include('ecommerce_app.urls')),
     path('update-constance-setting/', update_confi_setting, name="update-constance"),
 ]

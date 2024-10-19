@@ -50,7 +50,7 @@ def admin_login(request):
 def user_logout(request):
     """ Logout method for users"""
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 
 @login_required

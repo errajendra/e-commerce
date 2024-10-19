@@ -1,0 +1,85 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load template_tag %}
+{% block content %}
+
+<!-- ========================= Breadcrumb Start =============================== -->
+<div class="breadcrumb py-26 bg-main-two-50">
+    <div class="container container-lg">
+        <div class="breadcrumb-wrapper flex-between flex-wrap gap-16">
+            <h6 class="mb-0">Terms & Condition's</h6>
+            <ul class="flex-align gap-8 flex-wrap">
+                <li class="text-sm">
+                    <a href="{% url "home" %}" class="text-gray-900 flex-align gap-8 hover-text-main-600">
+                        <i class="ph ph-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="flex-align">
+                    <i class="ph ph-caret-right"></i>
+                </li>
+                <li class="text-sm text-main-600"> TC </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ========================= Breadcrumb End =============================== -->
+
+<section class="account py-80">
+    <div class="container container-lg">
+        <div class="row gy-4 p-14">
+            <div class="card card-soft-main-600 shadow border-0">
+                <div class="card-header card-title">
+                    <h5 class=""> {{title}} </h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Effective Date: 10/10/2024 </strong></p>
+
+                    <p>Welcome to Muscle Ayurveda! This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from <a href="https://muscleayurveda.com">muscleayurveda.com</a> (the "Site").</p>
+
+                    <h5>1. Information We Collect</h5>
+                    <p>When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the Site, we collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site. We refer to this automatically-collected information as "Device Information."</p>
+
+                    <h3>a. Personal Information</h3>
+                    <p>When you make a purchase or attempt to make a purchase through the Site, we collect certain personal information from you, including your name, billing address, shipping address, payment information (including credit card numbers, etc.), email address, and phone number. This is referred to as "Order Information."</p>
+
+                    <h3>b. How Do We Use Your Information?</h3>
+                    <p>We use the Order Information that we collect generally to fulfill any orders placed through the Site (including processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations). Additionally, we use this Order Information to:</p>
+                    <ul>
+                        <li>Communicate with you;</li>
+                        <li>Screen our orders for potential risk or fraud; and</li>
+                        <li>When in line with the preferences you have shared with us, provide you with information or advertising relating to our products or services.</li>
+                    </ul>
+
+                    <h5>2. Sharing Your Information</h5>
+                    <p>We share your personal information with third parties to help us use your personal information, as described above. For example, we use [Insert Third-Party Service] to power our online store—you can read more about how [Insert Third-Party Service] uses your Personal Information here: [Insert Link to Third-Party Service’s Privacy Policy].</p>
+
+                    <p>We may also share your personal information to comply with applicable laws and regulations, to respond to a subpoena, search warrant, or other lawful requests for information we receive, or to otherwise protect our rights.</p>
+
+                    <h5>3. Behavioral Advertising</h5>
+                    <p>As described above, we use your personal information to provide you with targeted advertisements or marketing communications we believe may be of interest to you. For more information about how targeted advertising works, you can visit the Network Advertising Initiative’s (“NAI”) educational page at <a href="http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work">here</a>.</p>
+
+                    <p>You can opt-out of targeted advertising by using the links below:</p>
+                    <ul>
+                        <li>Facebook: <a href="https://www.facebook.com/settings/?tab=ads">here</a></li>
+                        <li>Google: <a href="https://www.google.com/settings/ads/anonymous">here</a></li>
+                    </ul>
+
+                    <h5>4. Data Retention</h5>
+                    <p>When you place an order through the Site, we will maintain your Order Information for our records unless and until you ask us to delete this information.</p>
+
+                    <h5>5. Your Rights</h5>
+                    <p>If you are a resident of the European Economic Area (EEA), you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact us through the contact information below.</p>
+
+                    <h5>6. Changes</h5>
+                    <p>We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal, or regulatory reasons.</p>
+
+                    <h5>Contact Us</h5>
+                    <p>For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by email at [insert email] or by mail using the details provided below:</p>
+                    <a href="{% url "contact" %}" class="btn btn-info mt-14">Contact US</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
