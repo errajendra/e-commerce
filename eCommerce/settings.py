@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9=3w3#+(-3iz)+gkb*plzrhsuk#bw=matlpvvx3kyu#b938hp=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['muscleayurveda.com']
 
 
 # Application definition
