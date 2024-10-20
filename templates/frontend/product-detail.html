@@ -43,36 +43,38 @@
                         <div class="product-details__left">
                             
                             <div class="product-details__thumb-slider border border-gray-100 rounded-16">
+                                {% if product.image1 %}
                                 <div class="">
                                     <div class="product-details__thumb flex-center h-100">
                                         <img src="{{product.image1.url}}" alt="">
                                     </div>
                                 </div>
+                                {% endif %}
                                 {% if product.image2 %}
                                 <div class="">
                                     <div class="product-details__thumb flex-center h-100">
-                                        <img src="assets/images/thumbs/product-details-thumb2.png" alt="">
+                                        <img src="{{product.image2.url}}" alt="">
                                     </div>
                                 </div>
                                 {% endif %}
                                 {% if product.image3 %}
                                 <div class="">
                                     <div class="product-details__thumb flex-center h-100">
-                                        <img src="assets/images/thumbs/product-details-thumb3.png" alt="">
+                                        <img src="{{product.image3.url}}" alt="">
                                     </div>
                                 </div>
                                 {% endif %}
                                 {% if product.image4 %}
                                 <div class="">
                                     <div class="product-details__thumb flex-center h-100">
-                                        <img src="assets/images/thumbs/product-details-thumb1.png" alt="">
+                                        <img src="{{product.image4.url}}" alt="">
                                     </div>
                                 </div>
                                 {% endif %}
                                 {% if product.image5 %}
                                 <div class="">
                                     <div class="product-details__thumb flex-center h-100">
-                                        <img src="assets/images/thumbs/product-details-thumb2.png" alt="">
+                                        <img src="{{product.image5.url}}" alt="">
                                     </div>
                                 </div>
                                 {% endif %}

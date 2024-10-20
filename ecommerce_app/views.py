@@ -131,14 +131,15 @@ def update_product(request, pk):
         else:
             print(form.errors)
     else:
-        form = ProductForm()
+        form = ProductForm(instance=product)
     context = {
         'title': 'Update product',
+        'form': form,
         'instance': product,
         'errors': form.errors,
         'sub_categories': SubCategory.objects.all()
     }
-    return render(request, 'forms/product-form.html', context)
+    return render(request, 'forms/form.html', context)
 
 
 def list_products(request):
