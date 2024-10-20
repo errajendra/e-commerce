@@ -82,31 +82,41 @@
 
                             <div class="mt-24">
                                 <div class="product-details__images-slider">
+                                    {% if product.image1 %}
                                     <div>
                                         <div class="max-w-120 max-h-120 h-100 flex-center border border-gray-100 rounded-16 p-8">
-                                            <img src="assets/images/thumbs/product-details-img1.png" alt="">
+                                            <img src="{{product.image1.url}}" alt="">
                                         </div>
                                     </div>
+                                    {% endif %}
+                                    {% if product.image2 %}
                                     <div>
                                         <div class="max-w-120 max-h-120 h-100 flex-center border border-gray-100 rounded-16 p-8">
-                                            <img src="assets/images/thumbs/product-details-img2.png" alt="">
+                                            <img src="{{product.image2.url}}" alt="">
                                         </div>
                                     </div>
+                                    {% endif %}
+                                    {% if product.image3 %}
                                     <div>
                                         <div class="max-w-120 max-h-120 h-100 flex-center border border-gray-100 rounded-16 p-8">
-                                            <img src="assets/images/thumbs/product-details-img3.png" alt="">
+                                            <img src="{{product.image3.url}}" alt="">
                                         </div>
                                     </div>
+                                    {% endif %}
+                                    {% if product.image4 %}
                                     <div>
                                         <div class="max-w-120 max-h-120 h-100 flex-center border border-gray-100 rounded-16 p-8">
-                                            <img src="assets/images/thumbs/product-details-img1.png" alt="">
+                                            <img src="{{product.image4.url}}" alt="">
                                         </div>
                                     </div>
+                                    {% endif %}
+                                    {% if product.image5 %}
                                     <div>
                                         <div class="max-w-120 max-h-120 h-100 flex-center border border-gray-100 rounded-16 p-8">
-                                            <img src="assets/images/thumbs/product-details-img2.png" alt="">
+                                            <img src="{{product.image5.url}}" alt="">
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
