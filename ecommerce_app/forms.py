@@ -46,7 +46,7 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = "__all__"
-        exclude = ('category', 'selling_price')
+        exclude = ('sub_category', 'selling_price')
         
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),

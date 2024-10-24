@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from ecommerce_app.models import Product, Category
 from user.models import CustomUser as User
-from user.forms import UserUpdateForm
+from user.forms import UserUpdateForm, UserRegisterForm
 
 
 def index(request):
@@ -71,6 +73,7 @@ def cart(request):
     return render(request, "frontend/cart.html", context)
 
 
+@login_required
 def checkout(request, product_id):
     """ Checkout page 
     User can buy the product direct without adding to cart.
@@ -114,14 +117,28 @@ def login_customer(request):
             user = User.objects.get(email=email)
         except:
             user = None
-        print(password)
+            messages.warning(request, "Invalid credentials.")
         if user:
             if user.check_password(password):
                 login(request, user)
-                next = request.GET.get('next', None)
+                next = request.POST.get('next', None)
                 if next:
                     return redirect(next)
-                return redirect('home')
+                return redirect('account')
+            else:
+                messages.warning(request, "Invalid credentials.")
+    return redirect('account')
+
+
+def register_customer(request):
+    """ Custumer Register Method. """
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfully registered.! please login.")
+        else:
+            messages.warning(request, "Please fill the correct information..")
     return redirect('account')
 
 

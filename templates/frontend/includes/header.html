@@ -19,7 +19,7 @@
 <div class="mobile-menu scroll-sm d-lg-none d-block">
     <button type="button" class="close-button"> <i class="ph ph-x"></i> </button>
     <div class="mobile-menu__inner">
-        <a href="javascript:void(0)" class="mobile-menu__logo">
+        <a href="{% url "home" %}" class="mobile-menu__logo">
         <img src="{% static "frontend/assets/images/logo/logo.png" %}" alt="Logo">
         </a>
         <div class="mobile-menu__menu">
@@ -169,7 +169,7 @@
         <nav class="header-inner flex-between">
             <!-- Logo Start -->
             <div class="logo">
-                <a href="javascript:void(0)" class="link">
+                <a href="{% url "home" %}" class="link">
                 <img src="{% static "frontend/assets/images/logo/logo.png" %}" alt="Logo">
                 </a>
             </div>

@@ -143,7 +143,7 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'user.CustomUser'
 
-LOGIN_URL = "/user/login/"
+LOGIN_URL = "/account/"
 
 
 # Password validation

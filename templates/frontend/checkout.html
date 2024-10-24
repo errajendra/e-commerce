@@ -32,31 +32,28 @@
               <form action="#" class="pe-xl-5">
                   <div class="row gy-3">
                       <div class="col-sm-6 col-xs-6">
-                          <input type="text" class="common-input border-gray-100" placeholder="First Name">
-                      </div>
-                      <div class="col-sm-6 col-xs-6">
-                          <input type="text" class="common-input border-gray-100" placeholder="Last Name">
+                          <input type="text" name="name" value="{{request.user.name}}" class="common-input border-gray-100" placeholder="Name">
                       </div>
                       <div class="col-12">
-                          <input type="text" class="common-input border-gray-100" placeholder="House number and street name">
+                          <input type="text" name="hn" class="common-input border-gray-100" placeholder="House number and street name">
                       </div>
                       <div class="col-12">
-                          <input type="text" class="common-input border-gray-100" placeholder="Apartment, suite, unit, etc. (Optional)">
+                          <input type="text" name="apartment" class="common-input border-gray-100" placeholder="Apartment, suite, unit, etc. (Optional)">
                       </div>
                       <div class="col-12">
-                          <input type="text" class="common-input border-gray-100" placeholder="City">
+                          <input type="text" name="city" class="common-input border-gray-100" placeholder="City">
                       </div>
                       <div class="col-12">
-                          <input type="text" class="common-input border-gray-100" placeholder="State">
+                          <input type="text" name="state" class="common-input border-gray-100" placeholder="State">
                       </div>
                       <div class="col-12">
-                          <input type="text" class="common-input border-gray-100" placeholder="Postal Code">
+                          <input type="text" name="pin" class="common-input border-gray-100" placeholder="Postal Code">
                       </div>
                       <div class="col-12">
-                          <input type="number" class="common-input border-gray-100" placeholder="Phone">
+                          <input type="number" name="mobile_number" value="{{request.user.mobile_number}}" class="common-input border-gray-100" placeholder="Mobile Number">
                       </div>
                       <div class="col-12">
-                          <input type="email" class="common-input border-gray-100" placeholder="Email Address">
+                          <input type="email" name="email" value="{{request.user.email}}" class="common-input border-gray-100" placeholder="Email Address">
                       </div>
                       
                       <div class="col-12">
