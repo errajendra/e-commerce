@@ -1,4 +1,5 @@
 {% load static %}
+{% load template_tag %}
 <!-- ==================== Search Box Start Here ==================== -->
 <form action="#" class="search-box">
     <button type="button" class="search-box__close position-absolute inset-block-start-0 inset-inline-end-0 m-16 w-48 h-48 border border-gray-100 rounded-circle flex-center text-white hover-text-gray-800 hover-bg-white text-2xl transition-1">
@@ -20,7 +21,7 @@
     <button type="button" class="close-button"> <i class="ph ph-x"></i> </button>
     <div class="mobile-menu__inner">
         <a href="{% url "home" %}" class="mobile-menu__logo">
-        <img src="{% static "frontend/assets/images/logo/logo.png" %}" alt="Logo">
+        <img src="{% get_logo_url %}" alt="Logo">
         </a>
         <div class="mobile-menu__menu">
             <!-- Nav Menu Start -->
@@ -170,7 +171,7 @@
             <!-- Logo Start -->
             <div class="logo">
                 <a href="{% url "home" %}" class="link">
-                <img src="{% static "frontend/assets/images/logo/logo.png" %}" alt="Logo">
+                <img src="{% get_logo_url %}" alt="Logo">
                 </a>
             </div>
             <!-- Logo End  -->

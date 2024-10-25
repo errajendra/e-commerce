@@ -7,7 +7,7 @@
       <div class="footer-item-wrapper d-flex align-items-start flex-wrap justify-content-center">
         <div class="footer-item">
           <div class="footer-item__logo">
-            <a href="index.html"> <img src="{% static "frontend/assets/images/logo/logo.png" %}" alt=""></a>
+            <a href="{% url "home" %}"> <img src="{% get_logo_url %}" alt=""></a>
           </div>
           <p class="mb-24">We're Grocery Shop, an innovative team of food supliers.</p>
           <div class="flex-align gap-16 mb-16">

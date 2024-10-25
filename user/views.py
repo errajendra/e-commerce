@@ -12,7 +12,7 @@ from .forms import (
 
 
 
-@login_required(login_url='/user/login/')
+@login_required
 def index(request):
     """ Dashbord Page."""
     context = {}
