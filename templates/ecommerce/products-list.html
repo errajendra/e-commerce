@@ -27,8 +27,6 @@
                         <th scope="col" class="sort" data-sort="name">Image</th>
                         <th scope="col" class="sort" data-sort="name">Name</th>
                         <th scope="col" class="sort" data-sort="name">Category</th>
-                        <th scope="col" class="sort" data-sort="name">Sub Category</th>
-                        <th scope="col" class="sort" data-sort="budget">Description</th>
                         <th scope="col" class="sort" data-sort="budget">Price</th>
                         <th scope="col" class="sort" data-sort="budget">Discount</th>
                         <th scope="col" class="sort" data-sort="budget">Stock</th>
@@ -49,13 +47,7 @@
                             {{product.name}}
                         </td>
                         <td>
-                            {{product.sub_category.category_title.category.name}}
-                        </td>
-                        <td>
-                            {{product.sub_category.name}}
-                        </td>
-                        <td>
-                            {{product.description }}    
+                            {{product.category.name}}
                         </td>
                         <td>
                             {{product.price}}
