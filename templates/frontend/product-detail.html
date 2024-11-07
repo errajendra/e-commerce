@@ -137,7 +137,7 @@
                                     <span class="text-sm fw-medium text-gray-500">(21,671)</span>
                                 </div>
                                 <span class="text-sm fw-medium text-gray-500">|</span>
-                                <span class="text-gray-900"> <span class="text-gray-400">SKU:</span>EB4DRP </span>
+                                <span class="text-gray-900"> <span class="text-gray-400">SKU:</span>{{product.sku}} </span>
                             </div>
                             <span class="mt-32 pt-32 text-gray-700 border-top border-gray-100 d-block"></span>
                             <p class="text-gray-700"> {{product.sub_name}} </p>
@@ -212,8 +212,7 @@
                                 <a href="#" class="text-xs fw-semibold text-main-two-600 text-decoration-underline hover-text-main-two-700">View Details</a>
                             </div> {% endcomment %}
                             <ul class="list-inside ms-12">
-                                <li class="text-gray-900 text-sm mb-8"> </li>
-                                <li class="text-gray-900 text-sm mb-0">Buy 1, Get 1 FREE</li>
+                                <li class="text-gray-900 text-sm mb-0">Shipping FREE in India</li>
                             </ul>
                             
                         </div>
@@ -245,11 +244,11 @@
                             <i class="ph-fill ph-arrow-u-up-left"></i>
                         </span>
                         <div class="">
-                            <h6 class="text-sm mb-8">Free 90-day returns</h6>
+                            <h6 class="text-sm mb-8">Free 7-day returns</h6>
                             <p class="text-gray-700">Shop risk-free with easy returns.</p>
                         </div>
                     </div>
-                    <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
+                    {% comment %} <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
                         <span class="w-44 h-44 bg-white text-main-600 rounded-circle flex-center text-2xl flex-shrink-0">
                             <i class="ph-fill ph-check-circle"></i>
                         </span>
@@ -257,7 +256,7 @@
                             <h6 class="text-sm mb-8">Pickup available at Shop location</h6>
                             <p class="text-gray-700">Usually ready in 24 hours</p>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                     <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
                         <span class="w-44 h-44 bg-white text-main-600 rounded-circle flex-center text-2xl flex-shrink-0">
                             <i class="ph-fill ph-credit-card"></i>

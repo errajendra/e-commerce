@@ -128,7 +128,9 @@ class Product(BaseModel):
         _('Product Sort Description'), max_length=250,
         # help_text="Product's short description or tagline"
     )
-    description = models.TextField(_("Description"), null=True, blank=True)
+    description = models.TextField(
+        _("Description"), null=True, blank=True,
+        help_text="This will not showing in the frontend now")
     price = models.FloatField(_('Listing Price'))
     discount_price = models.FloatField(
         _('Discount Price'), default=0
@@ -139,6 +141,8 @@ class Product(BaseModel):
             "This will be automaticaly calculated."
         )
     )
+    sku = models.CharField(
+        _("SKU"), max_length=15, null=True, blank=True)
     stock = models.PositiveIntegerField(_('Stock Count'), default=0)
     image1 = models.ImageField(
         _("Product Image 1"), upload_to='products/', default='product-default.jpg', 
@@ -365,6 +369,14 @@ class Transaction(BaseModel):
             ("ONLINE", 'ONLINE'),
             ),
         default="CASH")
+    # method = models.CharField(
+    #     _("Transaction Method"),
+    #     max_length=10,
+    #     choices=(
+    #         ("RazorPay", 'RazorPay'),
+    #         ("PayU", 'PayU'),
+    #         ("CASH", 'CASH'),
+    #     ), default="CASH")
     
     # Bank Transaction  Details
     tracking_id = models.CharField(
