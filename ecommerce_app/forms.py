@@ -59,7 +59,7 @@ class ProductForm(forms.ModelForm):
             'stock': forms.NumberInput(attrs={'class': 'form-control'}),
             'availability': forms.Select(attrs={'class': 'form-control'}),
             # 'unit': forms.Select(attrs={'class': 'form-control'}),
-            # 'sku': forms.TextInput(attrs={'class': 'form-control'}),
+            'sku': forms.TextInput(attrs={'class': 'form-control'}),
             # 'treatment': forms.TextInput(attrs={'class': 'form-control'}),
             # 'transparency': forms.TextInput(attrs={'class': 'form-control'}),
             # 'shape': forms.TextInput(attrs={'class': 'form-control'}),

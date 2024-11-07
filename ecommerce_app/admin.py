@@ -35,12 +35,12 @@ class SubCategoryAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name', 
-        'category', 
-        'sub_category', 
+        'category',
         'sub_name',
-        'description',
         'price', 
         'discount_price', 
+        'selling_price',
+        'sku',
         'stock', 
         'is_featured',
         'availability', 
@@ -50,6 +50,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = (
         'category', 'availability', 'is_featured', 'status', 'created_at')
     search_fields = ('name', 'sub_name', 'description')
+    list_editable = ('price', 'is_featured', 'stock', 'status', 'sku')
     
 
 
