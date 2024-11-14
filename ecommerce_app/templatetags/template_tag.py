@@ -11,3 +11,23 @@ def get_logo_url():
 @register.simple_tag
 def site_title():
     return config.SITE_TITLE
+
+@register.simple_tag
+def office_address():
+    return config.OFFICE_ADDRESS
+
+@register.simple_tag
+def contact1():
+    return config.CONTACT1
+
+@register.simple_tag
+def contact2():
+    return config.CONTACT2
+
+@register.simple_tag
+def support_mail():
+    return config.SUPPORT_MAIL
+
+@register.simple_tag
+def powered_by():
+    return config.POWERED_BY

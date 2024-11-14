@@ -9,26 +9,22 @@
           <div class="footer-item__logo">
             <a href="{% url "home" %}"> <img src="{% get_logo_url %}" alt=""></a>
           </div>
-          <p class="mb-24">We're Grocery Shop, an innovative team of food supliers.</p>
+          <p class="mb-24">We always try to deliver best service & getting feedback from our valuable person.</p>
           <div class="flex-align gap-16 mb-16">
             <span class="w-32 h-32 flex-center rounded-circle bg-main-600 text-white text-md flex-shrink-0"><i class="ph-fill ph-map-pin"></i></span>
-            <span class="text-md text-gray-900 ">A-58, Block - A, Sector 63 Noida, IN</span>
-          </div>
-          <div class="flex-align gap-16 mb-16">
-            <span class="w-32 h-32 flex-center rounded-circle bg-main-600 text-white text-md flex-shrink-0"><i class="ph-fill ph-map-pin"></i></span>
-            <span class="text-md text-gray-900 ">HN-87, Gurudwara Madan Mahal, Jabalpur IN</span>
+            <span class="text-md text-gray-900 "> {% office_address %} </span>
           </div>
           <div class="flex-align gap-16 mb-16">
             <span class="w-32 h-32 flex-center rounded-circle bg-main-600 text-white text-md flex-shrink-0"><i class="ph-fill ph-phone-call"></i></span>
             <div class="flex-align gap-16 flex-wrap">
-              <a href="tel:+919179249588" class="text-md text-gray-900 hover-text-main-600">+91 9179249588</a>
+              <a href="tel:{% contact1 %}" class="text-md text-gray-900 hover-text-main-600">{% contact1 %}</a>
               <span class="text-md text-main-600 ">or</span>
-              <a href="tel:+919179249593" class="text-md text-gray-900 hover-text-main-600">+91 9179249593</a>
+              <a href="tel:{% contact2 %}" class="text-md text-gray-900 hover-text-main-600">{% contact2 %}</a>
             </div>
           </div>
           <div class="flex-align gap-16 mb-16">
             <span class="w-32 h-32 flex-center rounded-circle bg-main-600 text-white text-md flex-shrink-0"><i class="ph-fill ph-envelope"></i></span>
-            <a href="mailto:support@muscleayurveda.com" class="text-md text-gray-900 hover-text-main-600">support@muscleayurveda.com</a>
+            <a href="mailto:{% support_mail %}" class="text-md text-gray-900 hover-text-main-600">{% support_mail %}</a>
           </div>
         </div>
         
@@ -78,7 +74,7 @@
   <div class="bottom-footer bg-color-one py-8">
     <div class="container container-lg">
       <div class="bottom-footer__inner flex-between flex-wrap gap-16 py-16">
-        <p class="bottom-footer__text "> {% site_title %} &copy; 2024. All Rights Reserved </p>
+        <p class="bottom-footer__text "> {% site_title %} &copy; <script>document.write(new Date().getFullYear())</script>. All Rights Reserved | Powered by @{% powered_by %} </p>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 {% extends "frontend/base.html" %}
 {% load static %}
+{% load template_tag %}
 {% block content %}
 
     <!-- ========================= Breadcrumb Start =============================== -->
@@ -65,19 +66,19 @@
                         <h6 class="mb-48">Get In Touch</h6>
                         <div class="flex-align gap-16 mb-16">
                             <span class="w-40 h-40 flex-center rounded-circle border border-gray-100 text-main-two-600 text-2xl flex-shrink-0"><i class="ph-fill ph-phone-call"></i></span>
-                            <a href="tel:+919179249593" class="text-md text-gray-900 hover-text-main-600">+91 9179249593</a>
+                            <a href="tel:{% contact1 %}" class="text-md text-gray-900 hover-text-main-600"> {% contact1 %} </a>
                         </div>
                         <div class="flex-align gap-16 mb-16">
                             <span class="w-40 h-40 flex-center rounded-circle border border-gray-100 text-main-two-600 text-2xl flex-shrink-0"><i class="ph-fill ph-envelope"></i></span>
-                            <a href="mailto:support@muscleayurveda.com" class="text-md text-gray-900 hover-text-main-600">support@muscleayurveda.com</a>
+                            <a href="mailto:{% support_mail %}" class="text-md text-gray-900 hover-text-main-600"> {% support_mail %} </a>
                         </div>
                         <div class="flex-align gap-16 mb-0">
                             <span class="w-40 h-40 flex-center rounded-circle border border-gray-100 text-main-two-600 text-2xl flex-shrink-0"><i class="ph-fill ph-map-pin"></i></span>
-                            <span class="text-md text-gray-900 ">A-58, Block - A, Sector 63 Noida, IN</span>
+                            <span class="text-md text-gray-900 "> {% office_address %} </span>
                         </div>
                     </div>
                     <div class="mt-24 flex-align flex-wrap gap-16">
-                        <a href="tel:+919179249588" class="bg-neutral-600 hover-bg-main-600 rounded-8 p-10 px-16 flex-between flex-wrap gap-8 flex-grow-1">
+                        <a href="tel:{% contact2 %}" class="bg-neutral-600 hover-bg-main-600 rounded-8 p-10 px-16 flex-between flex-wrap gap-8 flex-grow-1">
                             <span class="text-white fw-medium">Get Support On Call</span>
                             <span class="w-36 h-36 bg-main-600 rounded-8 flex-center text-xl text-white"><i class="ph ph-headset"></i></span>
                         </a>

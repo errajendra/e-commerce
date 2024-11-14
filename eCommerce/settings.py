@@ -116,12 +116,17 @@ CONSTANCE_ADDITIONAL_FIELDS = {
 }
 
 CONSTANCE_CONFIG = {
-    'SERVICEABLE_AREA_ZIPCODE': ("560076,560068", 'Enter comman separated zip codes of your serviceable area'),
     'LOGO': ('', 'Logo', 'image_field'),
     'SITE_TITLE': ('Muscle Ayurveda', 'Site Title', str),
+    'OFFICE_ADDRESS': ('A-58, Block - A, Sector 63 Noida, IN', 'Office address', str),
+    'CONTACT1': ('+91 9179249588', 'Contact 1', str),
+    'CONTACT2': ('+91 9179249593', 'Contact 2', str),
+    'SUPPORT_MAIL': ('support@muscleayurveda.com', 'Support mail on footer', str),
+    'POWERED_BY': ('ADM EnterPrises', str),
 }
 CONSTANCE_CONFIG_FIELDSETS = {
-    'General Options': ('SITE_TITLE', 'LOGO', 'SERVICEABLE_AREA_ZIPCODE'),
+    'Branding Section': ('SITE_TITLE', 'LOGO', 'POWERED_BY'),
+    'Footer Section': ('OFFICE_ADDRESS', 'CONTACT1', 'CONTACT2', 'SUPPORT_MAIL')
 }
 
 # Database
