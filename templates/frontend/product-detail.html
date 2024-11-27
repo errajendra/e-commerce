@@ -144,13 +144,13 @@
                             <div class="mt-32 flex-align flex-wrap gap-32">
                                 <div class="flex-align gap-8">
                                     <h4 class="mb-0"> ₹{{product.selling_price}} </h4>
-                                    <span class="text-md text-gray-500">₹{{product.price}} </span>
+                                    <span class="text-md text-gray-500 text-decoration-line-through">₹{{product.price}} </span>
                                 </div>
                                 <a href="{% url "checkout" product.id %}" class="btn btn-main rounded-pill">Order Now </a>
                             </div>
                             <span class="mt-32 pt-32 text-gray-700 border-top border-gray-100 d-block"></span>
 
-                            <div class="flex-align flex-wrap gap-16 bg-color-one rounded-8 py-16 px-24">
+                            <!-- <div class="flex-align flex-wrap gap-16 bg-color-one rounded-8 py-16 px-24">
                                 <div class="flex-align gap-16">
                                     <span class="text-main-600 text-sm">Special Offer:</span>
                                 </div>
@@ -163,9 +163,9 @@
                                     </ul>
                                 </div>
                                 <span class="text-gray-900 text-xs">Remains untill the end of the offer</span>
-                            </div>
+                            </div> -->
 
-                            <div class="mb-24">
+                            <!-- <div class="mb-24">
                                 <div class="mt-32 flex-align gap-12 mb-16">
                                     <span class="w-32 h-32 bg-white flex-center rounded-circle text-main-600 box-shadow-xl"><i class="ph-fill ph-lightning"></i></span>
                                     <h6 class="text-md mb-0 fw-bold text-gray-900">Products are almost sold out</h6>
@@ -174,7 +174,7 @@
                                     <div class="progress-bar bg-main-two-600 rounded-pill" style="width: 32%"></div>
                                 </div>
                                 <span class="text-sm text-gray-700 mt-8">Available only:{{product.stock}} </span>
-                            </div>
+                            </div> -->
 
                             {% comment %} <span class="text-gray-900 d-block mb-8">Quantity:</span>
                             <div class="flex-between gap-16 flex-wrap">
@@ -211,9 +211,9 @@
                                 </div>
                                 <a href="#" class="text-xs fw-semibold text-main-two-600 text-decoration-underline hover-text-main-two-700">View Details</a>
                             </div> {% endcomment %}
-                            <ul class="list-inside ms-12">
+                            <!-- <ul class="list-inside ms-12">
                                 <li class="text-gray-900 text-sm mb-0">Shipping FREE in India</li>
-                            </ul>
+                            </ul> -->
                             
                         </div>
                     </div>
@@ -221,16 +221,16 @@
             </div>
             <div class="col-lg-3">
                 <div class="product-details__sidebar border border-gray-100 rounded-16 overflow-hidden">
-                    <div class="p-24">
+                    <!-- <div class="p-24">
                         <div class="flex-between bg-main-600 rounded-pill p-8">
                             <div class="flex-align gap-8">
                                 <span class="w-44 h-44 bg-white rounded-circle flex-center text-2xl"><i class="ph ph-storefront"></i></span>
                                 <span class="text-white">by Muscle Ayurveda</span>
                             </div>
-                            <a href="shop.html" class="btn btn-white rounded-pill text-uppercase">View Store</a>
+                            <a href="#" class="btn btn-white rounded-pill text-uppercase">View Store</a>
                         </div>
-                    </div>
-                    <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
+                    </div> -->
+                    <!-- <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
                         <span class="w-44 h-44 bg-white text-main-600 rounded-circle flex-center text-2xl flex-shrink-0">
                             <i class="ph-fill ph-truck"></i>
                         </span>
@@ -247,7 +247,7 @@
                             <h6 class="text-sm mb-8">Free 7-day returns</h6>
                             <p class="text-gray-700">Shop risk-free with easy returns.</p>
                         </div>
-                    </div>
+                    </div> -->
                     {% comment %} <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
                         <span class="w-44 h-44 bg-white text-main-600 rounded-circle flex-center text-2xl flex-shrink-0">
                             <i class="ph-fill ph-check-circle"></i>
@@ -266,7 +266,7 @@
                             <p class="text-gray-700">Payment upon receipt of goods, Payment by card in the department, Google Pay, Online card.</p>
                         </div>
                     </div>
-                    <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
+                    <!-- <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
                         <span class="w-44 h-44 bg-white text-main-600 rounded-circle flex-center text-2xl flex-shrink-0">
                             <i class="ph-fill ph-check-circle"></i>
                         </span>
@@ -274,8 +274,8 @@
                             <h6 class="text-sm mb-8">Warranty</h6>
                             <p class="text-gray-700">The Consumer Protection Act does not provide for the return of this product of proper quality.</p>
                         </div>
-                    </div>
-                    <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
+                    </div> -->
+                    <!-- <div class="p-24 bg-color-one d-flex align-items-start gap-24 border-bottom border-gray-100">
                         <span class="w-44 h-44 bg-white text-main-600 rounded-circle flex-center text-2xl flex-shrink-0">
                             <i class="ph-fill ph-package"></i>
                         </span>
@@ -283,7 +283,7 @@
                             <h6 class="text-sm mb-8">Packaging</h6>
                             <p class="text-gray-700">Research & development value proposition graphical user interface investor.</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -655,7 +655,7 @@
 </section>
   
 <!-- ========================== Similar Product Start ============================= -->
-<section class="new-arrival pb-80">
+<!-- <section class="new-arrival pb-80">
   <div class="container container-lg">
       <div class="section-heading">
           <div class="flex-between flex-wrap gap-8">
@@ -899,7 +899,7 @@
           </div>
       </div>
   </div>
-</section>
+</section> -->
 <!-- ========================== Similar Product End ============================= -->
       
 <!-- ========================== Shipping Section Start ============================ -->

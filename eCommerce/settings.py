@@ -116,13 +116,13 @@ CONSTANCE_ADDITIONAL_FIELDS = {
 }
 
 CONSTANCE_CONFIG = {
-    'LOGO': ('', 'Logo', 'image_field'),
+    'LOGO': ('logo.png', 'Logo', 'image_field'),
     'SITE_TITLE': ('Muscle Ayurveda', 'Site Title', str),
-    'OFFICE_ADDRESS': ('A-58, Block - A, Sector 63 Noida, IN', 'Office address', str),
+    'OFFICE_ADDRESS': ('A-58 Block - A Sector 63 Noida IN', 'Office address', str),
     'CONTACT1': ('+91 9179249588', 'Contact 1', str),
     'CONTACT2': ('+91 9179249593', 'Contact 2', str),
     'SUPPORT_MAIL': ('support@muscleayurveda.com', 'Support mail on footer', str),
-    'POWERED_BY': ('ADM EnterPrises', str),
+    'POWERED_BY': ('ADM EnterPrises', 'Powered By', str)
 }
 CONSTANCE_CONFIG_FIELDSETS = {
     'Branding Section': ('SITE_TITLE', 'LOGO', 'POWERED_BY'),
