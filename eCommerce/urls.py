@@ -35,6 +35,8 @@ urlpatterns = [
     path('admin/', include('user.urls')),
     path('ecommerce/', include('ecommerce_app.urls')),
     path('update-constance-setting/', update_confi_setting, name="update-constance"),
+    path('webhooks/', include('webhook.urls')),
+    path('payment/', include('payment-gaytway.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

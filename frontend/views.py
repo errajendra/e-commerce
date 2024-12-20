@@ -79,6 +79,9 @@ def checkout(request, product_id):
     User can buy the product direct without adding to cart.
     """
     product = get_object_or_404(Product, id=product_id)
+    if request.method == 'POST':
+        messages.success(request, "Order placed. !")
+    
     context = {
         'product': product,
     }
@@ -157,9 +160,11 @@ def privacy_policy(request):
     }
     return render(request, "frontend/privacy-policy.html", context)
 
+
 def refund_policy(request):
     """ Refund Policy page """
     context = {
         'title': "Refund Policy",
     }
     return render(request, "frontend/refund-policy.html", context)
+

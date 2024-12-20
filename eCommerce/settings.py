@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9=3w3#+(-3iz)+gkb*plzrhsuk#bw=matlpvvx3kyu#b938hp=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['muscleayurveda.com', 'localhost']
+ALLOWED_HOSTS = ['coursetube.in', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -301,3 +301,16 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
+
+# PayU Credentials
+PAYU_MID = os.environ.get('PAYU_MID_PROD')
+PAYU_AUTH_URL = os.environ.get('PAYU_AUTH_URL_PROD')
+PAYU_PAYLINK_URL = os.environ.get('PAYU_PAYLINK_URL_PROD')
+PAYU_CLIENT_ID = os.environ.get('PAYU_CLIENT_ID_PROD')
+PAYU_SECRET_KEY = os.environ.get('PAYU_SECRET_KEY_PROD')
+
+# PAYU_MID = os.environ.get('PAYU_MID_LIVE')
+# PAYU_AUTH_URL = os.environ.get('PAYU_AUTH_URL_LIVE')
+# PAYU_PAYLINK_URL = os.environ.get('PAYU_PAYLINK_URL_LIVE')
+# PAYU_CLIENT_ID = os.environ.get('PAYU_CLIENT_ID_LIVE')
+# PAYU_SECRET_KEY = os.environ.get('PAYU_SECRET_KEY_LIVE')
