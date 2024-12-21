@@ -30,7 +30,8 @@ def get_payu_access_token():
         "content-type": "application/x-www-form-urlencoded"
     }
     response = requests.post(url, data=payload, headers=headers)
-    return response.json()['access_token'] if response.status_code == 200 else None
+    token = response.json()['access_token'] if response.status_code == 200 else None
+    return token
 
 
 @csrf_exempt
@@ -42,6 +43,7 @@ def create_payu_order_link(request):
     
     data = serializer.data
     access_token = get_payu_access_token()
+    print(access_token)
     if access_token:
         url = settings.PAYU_PAYLINK_URL
 
@@ -53,6 +55,7 @@ def create_payu_order_link(request):
             "customer": {
                 "name": data['customer_name'],
                 "email": data['customer_email'],
+                "email": data['customer_email'],
                 "phone": data['customer_phone']
             },
             "transactionId": data['tnx_id'],
@@ -60,12 +63,12 @@ def create_payu_order_link(request):
 
         headers = {
             "accept": "application/json",
-            "mid": "8611283",
+            "mid": f"{settings.PAYU_MID}",
             "content-type": "application/json",
             "authorization": f"Bearer {access_token}"
         }
         response = requests.post(url, json=payload, headers=headers)
-        print(response)
+        print(response.json())
         return Response(response.json(), response.status_code)
     
     return Response(

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9=3w3#+(-3iz)+gkb*plzrhsuk#bw=matlpvvx3kyu#b938hp='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['coursetube.in', 'localhost', '127.0.0.1']
 
