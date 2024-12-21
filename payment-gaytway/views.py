@@ -37,16 +37,14 @@ def get_payu_access_token():
 @csrf_exempt
 @api_view(['post'])
 def create_payu_order_link(request):
+    print(request.data)
     serializer = CreatePaymentLinkSerialiser(data=request.data)
     if not serializer.is_valid():
         return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
-    
     data = serializer.data
     access_token = get_payu_access_token()
-    print(access_token)
     if access_token:
         url = settings.PAYU_PAYLINK_URL
-
         payload = {
             "subAmount": data['amount'],
             "isPartialPaymentAllowed": False,
