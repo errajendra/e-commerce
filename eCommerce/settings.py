@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9=3w3#+(-3iz)+gkb*plzrhsuk#bw=matlpvvx3kyu#b938hp='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['coursetube.in', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['coursetube.in', 'localhost', '127.0.0.1', 'pronexatrad.in']
 
 
 # Application definition
@@ -61,7 +61,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'eCommerce.urls'
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+    'https://coursetube.in',
+    'https://pronexatrad.in',
+]
 
 TEMPLATES = [
     {
@@ -308,3 +313,16 @@ PAYU_AUTH_URL = os.environ.get('PAYU_AUTH_URL')
 PAYU_PAYLINK_URL = os.environ.get('PAYU_PAYLINK_URL')
 PAYU_CLIENT_ID = os.environ.get('PAYU_CLIENT_ID')
 PAYU_SECRET_KEY = os.environ.get('PAYU_SECRET_KEY')
+
+# PhonePay
+
+PG_MERCHANTID = "M22QKPBFUCXR4"
+PG_MID = "MUI123445"
+PG_M_SALT_KEY = "1b0fd68d-043b-4cbf-86d2-993dec45cee6"
+PG_PAY_URL = "https://api.phonepe.com/apis/hermes/pg/v1/pay"
+# PG_PAY_URL = "https://mercury-t2.phonepe.com/v3/payLink/init"
+
+# PG_MERCHANTID = "PGTESTPAYUAT"
+# PG_MID = "MUID123"
+# PG_M_SALT_KEY = "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399"
+# PG_PAY_URL = "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay"

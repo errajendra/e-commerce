@@ -1,16 +1,17 @@
 import requests
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse, HttpResponseRedirect, render
+from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CreatePaymentLinkSerialiser
-from django.conf import settings
 
 
 def redirect_payment_url(request):
     payurl = request.GET.get('ref', '')
-    return HttpResponse(f"<script>location.replace('{payurl}');</script>")
+    return render(request, "frontend/redirect.html", {"payurl": payurl})
 
 
 def get_payu_access_token():
