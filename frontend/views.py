@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect
+import urllib.parse
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from ecommerce_app.models import Product, Category
+from ecommerce_app.models import Product, Category, Order, OrderProduct
 from user.models import CustomUser as User
 from user.forms import UserUpdateForm, UserRegisterForm
 
@@ -79,9 +80,39 @@ def checkout(request, product_id):
     User can buy the product direct without adding to cart.
     """
     product = get_object_or_404(Product, id=product_id)
+    user = request.user
     if request.method == 'POST':
-        messages.success(request, "Order placed. !")
-    
+        city = request.POST.get('city', '')
+        state = request.POST.get('state', '')
+        pin = request.POST.get('pin', '')
+        delivery_address = f"{city}, {state}, IN"
+        product_price = product.selling_price
+        ord = Order.objects.create(
+            user = user,
+            total_price = product_price,
+            delivery_address = delivery_address,
+            delivery_zip_code = pin
+        )
+        product_ord = OrderProduct.objects.create(
+            order = ord,
+            product = product,
+            price = product_price
+        )
+        # creating link for payment
+        
+        create_payment_link_url = 'https://coursetube.in/payment/create-phonerpay-order-link/'
+        payload = {
+            "amount": product_price,
+            "description": "Purchaging items.",
+            "tnx_id": f"C{ord.id}",
+            "customer_name": f"{user.name}",
+            "customer_phone": f"{user.mobile_number}"
+        }
+
+        urlparams = urllib.parse.urlencode(payload)
+        create_payment_link_url += "?" + urlparams
+        return redirect(create_payment_link_url)
+        
     context = {
         'product': product,
     }
@@ -99,8 +130,12 @@ def contact(request):
 def account(request):
     """ Account page """
     user = request.user
+    orders = Order.objects.filter(
+        user = user,
+    )
     context = {
-        "title": "Account"
+        "title": "Account",
+        "orders": orders
     }
     if user.is_authenticated:
         user = get_object_or_404(User, id=user.id)

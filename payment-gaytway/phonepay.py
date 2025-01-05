@@ -4,10 +4,11 @@ import base64
 import hashlib
 import requests
 from django.conf import settings
-from django.shortcuts import HttpResponse, render, redirect
+from django.shortcuts import HttpResponse, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from .serializers import CreatePaymentLinkSerialiser
+from ecommerce_app.models import Order
 
 
 @csrf_exempt
@@ -78,7 +79,7 @@ def create_pg_order_link(request):
     if pg_response.status_code == 200:
         result = pg_response.json()
         pay_url = result['data']['instrumentResponse']['redirectInfo']['url']
-        return render(request, "frontend/redirect.html", {"payurl": pay_url})
+        return HttpResponse(f'<meta name="referrer" content="strict-origin-when-cross-origin"><script type="text/javascript">window.location.href="{pay_url}";</script>')
 
         # return_url = host + reverse('phonepay_webhook') + f'?ref={pay_url}'
         # return HttpResponseRedirect(pay_url)
@@ -92,7 +93,15 @@ def create_pg_order_link(request):
 
 
 def check_pg_transaction_status(request, tran_id):
-    tran_id = int(tran_id)
+    try:
+        tran_id = int(tran_id)
+    except:
+        if tran_id[0] == 'C':
+            ord = get_object_or_404(Order, id=int(tran_id[1, -1]))
+            ord.status = "DELIVERED"
+            ord.save()
+            return redirect("account")
+    
     host = f"{request.scheme}://{request.META['HTTP_HOST']}"
     merchantId = settings.PG_MERCHANTID
     merchantUserId = settings.PG_MID
