@@ -97,10 +97,10 @@ def check_pg_transaction_status(request, tran_id):
         tran_id = int(tran_id)
     except:
         if tran_id[0] == 'C':
-            ord = get_object_or_404(Order, id=int(tran_id[1, -1]))
+            ord = get_object_or_404(Order, id=int(tran_id[1:]))
             ord.status = "DELIVERED"
             ord.save()
-            return redirect("account")
+        return redirect("account")
     
     host = f"{request.scheme}://{request.META['HTTP_HOST']}"
     merchantId = settings.PG_MERCHANTID
@@ -128,7 +128,11 @@ def check_pg_transaction_status(request, tran_id):
 
         response = requests.get(url, headers=headers)
         result = response.json()
+        print(result)
+        providerReferenceId = result['data']['providerReferenceId'] or ''
+        # payResponseCode = result['data']['payResponseCode']
         if result['success']:
+            print(result['success'])
             if result['data']['payResponseCode'] == "SUCCESS":
                 tnx_status = True
             else:
@@ -139,11 +143,12 @@ def check_pg_transaction_status(request, tran_id):
         # call payment api of frontend of success
         # frontend_url = "http://127.0.0.1:8080"
         frontend_webhook = frontend_url + '/webhook/phonepay/'
-        webhook_res = requests.post(
+        front_webhook_res = requests.post(
             url=frontend_webhook, 
             data={
                 "tnxid": tran_id,
-                "success": tnx_status
+                "success": tnx_status,
+                "providerReferenceId": providerReferenceId
             }
         )
         

@@ -130,15 +130,15 @@ def contact(request):
 def account(request):
     """ Account page """
     user = request.user
-    orders = Order.objects.filter(
-        user = user,
-    )
     context = {
-        "title": "Account",
-        "orders": orders
+        "title": "Account"
     }
     if user.is_authenticated:
-        user = get_object_or_404(User, id=user.id)
+        orders = Order.objects.filter(
+            user = user,
+        )
+        context["orders"] = orders
+        
         if request.method == "POST":
             form = UserUpdateForm(request.POST, instance=user)
             if form.is_valid():
