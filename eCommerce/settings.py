@@ -307,6 +307,10 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 
+RAZORPAY_KAY_ID = os.environ.get("RAZORPAY_KAY_ID")
+RAZORPAY_SECRETE_KEY = os.environ.get("RAZORPAY_SECRETE_KEY")
+RAZORPAY_APP_NAME = os.environ.get("RAZORPAY_APP_NAME")
+
 # PayU Credentials
 PAYU_MID = os.environ.get('PAYU_MID')
 PAYU_AUTH_URL = os.environ.get('PAYU_AUTH_URL')
